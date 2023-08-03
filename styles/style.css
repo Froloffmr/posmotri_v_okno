@@ -16,8 +16,11 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  padding: 133px 30px;
   outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   
 }
 
@@ -186,7 +189,7 @@ align-items: center;
   display: flex;
   flex-direction: column;
   width: 711px;
-  gap: 16px;
+  gap: 5px;
   
 }
 .result__video-container {
