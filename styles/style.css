@@ -40,7 +40,6 @@ ol {
   list-style: none;
 }
 
-
 .title {
   color: #FFF;
 font-family: Oswald;
@@ -49,7 +48,6 @@ font-style: normal;
 font-weight: 700;
 line-height: 94%;
 text-transform: uppercase;
-  margin-bottom: 26px;
 }
 .content {
   display: flex;
@@ -70,37 +68,59 @@ line-height: 94%;
 text-transform: uppercase;
 }
 
-.content__list{
+.content__list {
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: auto;
-  height:  398px;
-  gap: 15px;
+  height: 298px;
+  gap: 30px;
+  align-items: flex-start;
+  }
+  .content__list:last-child {
+    align-items: stretch;
+    
   }
   .content__list-item {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 399px;
+    height: 200px;
+    justify-content: space-between;
   }
   .content__card-link {
+    height: 100%;
     color: #FFF;
     text-decoration: none;
+    margin: 2px;
+    outline: none;
   }
 
 .content__details {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   height: 100%;
   width:399px;
-  flex-direction: column;
+  gap: 26px;
 }
 .content__video-card {
   display: flex;
+  width: 390px;
+  height: 100px;
   
 }
 .content__video-card-thumbnail {
   width: 194px;
-  height: 103px;
+height: 103px;
+flex-shrink: 0;
+  object-fit: cover;
+  object-position: center;
 }
 .content__video-card-description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   width: 100%;
 }
 .content__video-card-title {
@@ -112,14 +132,19 @@ line-height: 100%;
 text-transform: uppercase;
 }
 .content__video-card-description {
-line-height: 16.2px;
+  color: #FFF;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.2px;
 
 }
 .search-form {
   display:flex;
   justify-content: space-between;
   align-items: end;
-  padding-top: 16px;
+  height: 54px;
 }
 .search-form__fieldset-title {
 font-size: 18px;
@@ -128,8 +153,7 @@ font-weight: 400;
 .search-form__label {
   display: inline-flex;
 width: fit-content;
-gap: 10px;
-height: 27px;
+gap: 5px;
 align-items: center;
 }
 
@@ -140,6 +164,7 @@ align-items: center;
   gap: 5px;
   border-style: none;
   width: 225px;
+  max-height: 49px;
 }
 .search-form__textfield {
     display: flex;
@@ -158,23 +183,32 @@ align-items: center;
     appearance: none; 
 }
 .result {
+  display: flex;
+  flex-direction: column;
   width: 711px;
+  gap: 16px;
   
 }
 .result__video-container {
   position: relative;
   display: flex;
-  height: 399px;
+  flex-direction: column;
   object-fit:cover;
   object-position: center;
+  justify-content: center;
 }
 
 .search-form__pseudo-checkbox{
   width: 19px;
   height: 19px;
   border: 1px solid #FFF;
-}
+  object-position: center;
 
+}
+.search-form__checkbox-list {
+  display: inline-flex;
+  gap: 15px;
+}
 .search-form__label-text{
   cursor: pointer;
 }
@@ -210,12 +244,45 @@ align-items: center;
 
 
 
+
+.search-form__submit-button:hover {
+  text-decoration: underline;
+}
+.search-form__submit-button:focus {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
+}
+.search-form__submit-button:active {
+  background: #545050;
+  outline: none;
+}
+
+
 input[type='checkbox']:checked + span {
-  background-image:url(/image_box.svg) ;
+  background-image: url(/image_box.svg);
+  background-position: center;
+}
+
+input[type='checkbox']:active + span {
+  background-image: url(/image_box.svg);
   background-position: center;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+.search-form__label-text:hover {
+  line-height: normal;
+  text-decoration-line: underline;
+}
 
 .search-form__textfield:focus {
   outline: none;
@@ -231,8 +298,35 @@ input[type='checkbox']:checked + span {
 border-bottom: 1px solid #FFF;
 
 }
+.search-form__label:has(:active) {
+  outline: none;
+  border:#FFF solid 1px;
+  padding-bottom: 1px;
 
 
+  
+}
+
+
+
+
+
+
+
+
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.content__card-link:focus {  
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
+}
+.content__card-link:active {
+  background: #545050;
+  outline: none;
+}
 
 
 
